@@ -1,0 +1,7 @@
+tiempo secuencial: 9.88s
+
+real    0m40.819s
+user    0m58.539s
+sys     0m2.221s
+T001    8142.06
+RESULTADOS COINCIDEN
