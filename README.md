@@ -8,16 +8,6 @@ cp .env.example .env
 real	0m40.819s
 user	0m58.539s
 sys	0m2.221s
-T001	8142.06
-T002	8134.48
-T003	8134.29
-T004	8175.50
-T005	8147.30
-T006	8158.15
-T007	8129.66
-T008	8145.71
-T009	8120.44
-T010	8128.62
 
 COMPARATIVA DE RENDIMINETO
 El script secuencial en Python tardo 9.88 s y el job de Hadoop Streaming tardó 40.82 s (real 0m40.819s), por lo que el secuencial fue mas rapido. La salida de ambos fue identica, verificado con diff (“RESULTADOS COINCIDEN”). Esto se debe a que Hadoop se ejecuta en modo standalone, en una sola maquina y sin paralelismo real. El tiempo de CPU del job (user 58.5 s) fue mayor que su tiempo real (40.8 s), lo que indica que hubo cierto trabajo concurrente, pero no el suficiente para superar a una sola pasada secuencial que solo acumula unas decenas de tiendas en memoria. MapReduce conviene cuando los datos exceden la capacidad de una sola máquina y hay varios nodos que procesen bloques en paralelo.
